@@ -1,0 +1,98 @@
+---
+title: "Sistemas dinâmicos discretos: estudo do mapa logístico"
+subtitle: "Iniciação Científica — rascunho inicial"
+author: "Seu nome"
+lang: pt-BR
+bibliography: referencias.bib
+jupyter: python3
+format:
+  html:
+    toc: true
+    number-sections: true
+    code-fold: true
+    theme: cosmo
+  pdf:
+    toc: true
+    number-sections: true
+    documentclass: article
+    papersize: a4
+    fontsize: 12pt
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=3cm
+      - right=2cm
+execute:
+  echo: false
+  warning: false
+---
+
+# Introdução
+
+O estudo de sistemas dinâmicos discretos permite investigar como a evolução de um estado depende da aplicação iterada de uma função. Um exemplo clássico é o mapa logístico, discutido por @may1976.
+
+# Objetivos
+
+Investigar propriedades do mapa logístico, incluindo pontos fixos, estabilidade e comportamento de órbitas para diferentes parâmetros.
+
+# Fundamentação teórica
+
+## Sistemas dinâmicos discretos
+
+Seja $f:X\to X$ uma função. A órbita positiva de $x_0\in X$ é a sequência
+
+$$
+x_0,\ f(x_0),\ f^2(x_0),\ldots
+$$
+
+em que $f^n$ denota a $n$-ésima iterada de $f$.
+
+## Mapa logístico
+
+O mapa logístico é definido por
+
+$$
+x_{n+1}=r x_n(1-x_n), \qquad 0\leq r\leq 4.
+$$ {#eq-mapa-logistico}
+
+Aqui, $x_n\in[0,1]$ representa um estado normalizado e $r$ é um parâmetro. A @eq-mapa-logistico define a regra de evolução.
+
+# Exploração computacional
+
+O exemplo a seguir exibe a órbita numérica para $r=3{,}2$ e $x_0=0{,}2$. A @fig-orbita é produzida automaticamente pelo Python durante a renderização.
+
+```{python}
+#| label: fig-orbita
+#| fig-cap: "Órbita do mapa logístico para r = 3,2 e x₀ = 0,2."
+#| fig-width: 7
+#| fig-height: 4
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = 3.2
+x0 = 0.2
+n = 60
+
+orbita = np.empty(n + 1)
+orbita[0] = x0
+for i in range(n):
+    orbita[i + 1] = r * orbita[i] * (1 - orbita[i])
+
+fig, ax = plt.subplots()
+ax.plot(np.arange(n + 1), orbita, marker='.', linewidth=1)
+ax.set_xlabel('Iteração n')
+ax.set_ylabel('xₙ')
+ax.set_title('Mapa logístico')
+ax.grid(alpha=0.3)
+plt.show()
+```
+
+# Próximas etapas
+
+- Demonstrar a existência dos pontos fixos do mapa logístico.
+- Estudar a estabilidade local dos pontos fixos.
+- Investigar ciclos periódicos e mudanças qualitativas das órbitas.
+- Comparar resultados teóricos e simulações computacionais.
+
+# Referências {.unnumbered}
