@@ -1,0 +1,6 @@
+# Exploração computacional
+
+O exemplo a seguir exibe a órbita numérica para $r=3{,}2$ e $x_0=0{,}2$. A @fig-orbita é produzida automaticamente pelo Python durante a renderização.
+
+
+```

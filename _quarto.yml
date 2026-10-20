@@ -1,0 +1,38 @@
+project:
+  type: book
+
+book:
+  title: "Sistemas dinâmicos discretos"
+  subtitle: "Iniciação Científica"
+  author:
+    - "Ryan Nazario da Paz dos Santos"
+    - "Orientadora: Prof.ª Dra. Sônia Regina Leite Garcia"
+  chapters:
+    - index.qmd
+    - capitulos/objetivos.qmd
+    - capitulos/fundamentacao.qmd
+    - capitulos/exploracao.qmd
+    - capitulos/proximas-etapas.qmd
+    - capitulos/referencias.qmd
+
+lang: pt-BR
+bibliography: referencias.bib
+jupyter: python3
+
+format:
+  html:
+    theme: zephyr
+    code-fold: true
+  pdf:
+    documentclass: scrreprt
+    papersize: a4
+    fontsize: 12pt
+    geometry:
+      - top=2.5cm
+      - bottom=2.5cm
+      - left=3cm
+      - right=2cm
+
+execute:
+  echo: false
+  warning: false

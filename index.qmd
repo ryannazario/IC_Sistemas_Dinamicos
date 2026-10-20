@@ -1,0 +1,3 @@
+# Introdução
+
+O estudo de sistemas dinâmicos discretos permite investigar como a evolução de um estado depende da aplicação iterada de uma função.
