@@ -1,3 +1,0 @@
-# Objetivos
-
-Investigar propriedades do mapa logístico, incluindo pontos fixos, estabilidade e comportamento de órbitas para diferentes parâmetros.

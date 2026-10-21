@@ -4,9 +4,7 @@
 
 ### Iniciação Científica | IME-USP
 
-**Orientadora:** Prof.ª Dra. Sônia Regina Leite Garcia
-
-*Pesquisa matemática com foco no estudo de sistemas dinâmicos discretos, teoria do caos, bifurcações e dinâmica simbólica.*
+Pesquisa matemática com foco no estudo de sistemas dinâmicos discretos, teoria do caos, bifurcações e dinâmica simbólica.
 
 </div>
 

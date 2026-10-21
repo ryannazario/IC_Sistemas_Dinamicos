@@ -9,10 +9,27 @@ book:
     - "Orientadora: Prof.ª Dra. Sônia Regina Leite Garcia"
   chapters:
     - index.qmd
-    - capitulos/objetivos.qmd
-    - capitulos/fundamentacao.qmd
-    - capitulos/exploracao.qmd
-    - capitulos/proximas-etapas.qmd
+    - part: "Parte Um: Dinâmica Unidimensional"
+      chapters:
+        - capitulos/01-exemplos-sistemas-dinamicos.qmd
+        - capitulos/02-preliminares-calculo.qmd
+        - capitulos/03-definicoes-elementares.qmd
+        - capitulos/04-hiperbolicidade.qmd
+        - capitulos/05-familia-quadratica.qmd
+        - capitulos/06-dinamica-simbolica.qmd
+        - capitulos/07-conjugacao-topologica.qmd
+        - capitulos/08-caos.qmd
+        - capitulos/09-estabilidade-estrutural.qmd
+        - capitulos/10-teorema-de-sarkovskii.qmd
+        - capitulos/11-derivada-schwarziana.qmd
+        - capitulos/12-teoria-das-bifurcacoes.qmd
+        - capitulos/13-outra-visao-periodo-tres.qmd
+        - capitulos/14-aplicacoes-do-circulo.qmd
+        - capitulos/15-difeomorfismos-morse-smale.qmd
+        - capitulos/16-pontos-homoclinicos-bifurcacoes.qmd
+        - capitulos/17-duplicacao-de-periodo.qmd
+        - capitulos/18-teoria-de-kneading.qmd
+        - capitulos/19-genealogia-pontos-periodicos.qmd
     - capitulos/referencias.qmd
 
 lang: pt-BR
