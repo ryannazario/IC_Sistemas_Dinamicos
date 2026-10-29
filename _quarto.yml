@@ -4,6 +4,7 @@ project:
 book:
   title: "Sistemas dinâmicos discretos"
   subtitle: "Iniciação Científica"
+  downloads: [pdf]
   author:
     - "Ryan Nazario da Paz dos Santos"
     - "Orientadora: Prof.ª Dra. Sônia Regina Leite Garcia"
