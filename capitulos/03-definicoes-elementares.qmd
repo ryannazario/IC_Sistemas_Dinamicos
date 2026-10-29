@@ -1,2 +1,37 @@
 # Definições elementares
+::: {#def-homeomorfismo}
+## Homeomorfismo
+Uma função $f$ é dita um homeomorfismo se é uma bijeção contínua e sua inversa $f^{-1}$ também é contínua.
+:::
+
+
+::: {#def-orbita}
+## Órbita
+Órbita futura de um ponto $x$ sob $f$ é a sequência de pontos:
+$$
+\mathcal{O}^+(x) = (x, f(x), f^2(x), f^3(x), \dots).
+$$
+:::
+
+
+Se a função $f$ é um [homeomorfismo](#def-homeomorfismo){.quarto-xref}, podemos também definir a órbita completa de $x$, $\mathcal{O}(x)$, como os pontos $f^n(x)$ para $n \in \mathbb{Z}$; e órbita **passada**, $\mathcal{O}^-(x)$, de $x$ como a sequência de pontos $(x, f^{-1}(x), f^{-2}(x), \dots)$.
+
+::: {#exm-orbita}
+## Órbita da função $f(x)=x^3$
+
+Considere $f:\mathbb{R}\to\mathbb{R}$, definida por $f(x)=x^3$. Para $x_0=2$, sua órbita futura é
+$$
+\mathcal{O}^+(2)=(2, 8, 512, 134217728, \dots).
+$$
+:::
+Não é difícil perceber que, **para $x_0=2$**, a órbita futura da função $f(x)=x^3$ diverge para o infinito.
+
+::: {#def-ponto-fixo}
+## Ponto fixo
+Um ponto é dito um **ponto fixo** (ou ponto de equilíbrio) de $f$ se $f(x) = x$.
+:::
+
+
+
+a @def-orbita 
 

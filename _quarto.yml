@@ -31,15 +31,33 @@ book:
         - capitulos/18-teoria-de-kneading.qmd
         - capitulos/19-genealogia-pontos-periodicos.qmd
     - capitulos/referencias.qmd
+  appendices:
+    - apendices/demonstracoes.qmd
 
 lang: pt-BR
 bibliography: referencias.bib
 jupyter: python3
 
+crossref:
+  chapters: true
+  def-title: "Definição"
+  def-prefix: "Definição"
+  thm-title: "Teorema"
+  thm-prefix: "Teorema"
+  lem-title: "Lema"
+  lem-prefix: "Lema"
+  prp-title: "Proposição"
+  prp-prefix: "Proposição"
+  cor-title: "Corolário"
+  cor-prefix: "Corolário"
+  exm-title: "Exemplo"
+  exm-prefix: "Exemplo"
+
 format:
   html:
     theme: zephyr
     code-fold: true
+    css: custom.css
   pdf:
     documentclass: scrreprt
     papersize: a4

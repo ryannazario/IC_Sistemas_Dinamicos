@@ -1,0 +1,7 @@
+/* Força o título de definições, teoremas e lemas a ocupar uma linha própria */
+.theorem-title {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+
