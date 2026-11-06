@@ -31,7 +31,47 @@ Não é difícil perceber que, **para $x_0=2$**, a órbita futura da função $f
 Um ponto é dito um **ponto fixo** (ou ponto de equilíbrio) de $f$ se $f(x) = x$.
 :::
 
+::: {#exm-ponto-fixo}
+## Ponto fixo da função $f(x)=x^3$
 
+Ponto fixo é aquele que satisfaz $f(x) = x$. Então:
 
-a @def-orbita 
+$$x^3 = x \implies x^3 - x = 0 \implies x(x^2 - 1) = 0$$
+$$x(x - 1)(x + 1) = 0$$
+
+Logo há **três pontos fixos**:
+$\operatorname{Fix}(f) = \{-1, 0, 1\}$
+:::
+
+::: {#def-ponto-periodico}
+## Ponto periódico
+Um ponto é dito um **ponto periódico** de $f$ se existe $n \in \mathbb{N}$ tal que $f^n(x) = x$.
+:::
+
+::: {#def-primeiro-periodo}
+## Primeiro período
+O **primeiro período** de um ponto periódico $x$ é o menor valor $n \in \mathbb{N}$ tal que $f^n(x) = x$.
+:::
+
+::: {#exm-primeiro-periodo}
+## Primeiro período da função $f(x)=1-x^2$
+
+Considere a função
+$f(x) = 1 - x^2.$
+
+Para $x = 0$:
+$$
+f(0) = 1
+$$
+$$
+f^2(0) = f(1) = 0
+$$
+
+Logo,
+$$
+0 \xrightarrow{f} 1 \xrightarrow{f} 0
+$$
+
+Como $f^2(0) = 0$ e $f(0) \neq 0$, $0$ é um ponto periódico de primeiro período 2. Isso significa que a órbita de $0$ é $\mathcal{O}(0) = (0,1,0,1,0,\dots)$.
+:::
 
