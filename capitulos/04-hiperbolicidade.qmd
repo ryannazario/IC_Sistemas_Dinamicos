@@ -1,2 +1,35 @@
 # Hiperbolicidade
 
+::: {#def-ponto-hiperbolico}
+
+## Ponto hiperbólico
+Seja $p$ um ponto periódio de primeiro período $n$. O ponto $p$ é dito **hiperbólico** se $|(f^n)'(p)| \neq 1$.
+
+:::
+
+Quando $|(f^n)'(p)| < 1$, o ponto $p$ é chamado de **atrator**. Quando $|(f^n)'(p)| > 1$, o ponto $p$ é chamado de **repulsor**.
+
+::: {#exm-ponto-hiperbolico}
+
+O livro apresenta o seguinte exemplo:
+
+Seja a função $f(x) = \frac{1}{2}(x^3 + x)$. Calculamos inicialmente o seu [ponto fixo](#def-ponto-fixo){.quarto-xref}:
+
+$$
+\begin{aligned}
+\frac{1}{2}(p^3 + p) &= p \\
+p^3 + p &= 2p \\
+p^3 - p &= 0 \\
+p(p^2 - 1) &= 0.
+\end{aligned}
+$$
+
+Resolvendo a equação, obtemos $p = -1$, $p = 0$ e $p = 1$. Para verificar se esses pontos são hiperbólicos e classificar sua estabilidade, avaliamos a derivada $f'(x) = \frac{1}{2}(3x^2 + 1)$ em cada um deles:
+
+$$
+f'(-1) = 2, \qquad f'(0) = \frac{1}{2}, \qquad f'(1) = 2.
+$$
+
+Como nenhum dos pontos possui derivada de módulo igual a $1$, todos são hiperbólicos. Mais especificamente, como $|f'(-1)| = |f'(1)| = 2 > 1$, os pontos $p = -1$ e $p = 1$ são repulsores, enquanto $p = 0$ é um atrator, pois $|f'(0)| = \frac{1}{2} < 1$.
+
+:::
