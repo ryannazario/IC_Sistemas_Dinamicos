@@ -3,7 +3,7 @@
 ::: {#def-ponto-hiperbolico}
 
 ## Ponto hiperbólico
-Seja $p$ um ponto periódio de primeiro período $n$. O ponto $p$ é dito **hiperbólico** se $|(f^n)'(p)| \neq 1$.
+Seja $p$ um ponto periódico de primeiro período $n$. O ponto $p$ é dito **hiperbólico** se $|(f^n)'(p)| \neq 1$.
 
 :::
 
@@ -13,7 +13,7 @@ Quando $|(f^n)'(p)| < 1$, o ponto $p$ é chamado de **atrator**. Quando $|(f^n)'
 
 O livro apresenta o seguinte exemplo:
 
-Seja a função $f(x) = \frac{1}{2}(x^3 + x)$. Calculamos inicialmente o seu [ponto fixo](#def-ponto-fixo){.quarto-xref}:
+Seja a função $f(x) = \frac{1}{2}(x^3 + x)$. Calculamos inicialmente o seu [ponto fixo](03-definicoes-elementares.qmd#def-ponto-fixo){.quarto-xref}:
 
 $$
 \begin{aligned}
@@ -33,3 +33,87 @@ $$
 Como nenhum dos pontos possui derivada de módulo igual a $1$, todos são hiperbólicos. Mais especificamente, como $|f'(-1)| = |f'(1)| = 2 > 1$, os pontos $p = -1$ e $p = 1$ são repulsores, enquanto $p = 0$ é um atrator, pois $|f'(0)| = \frac{1}{2} < 1$.
 
 :::
+
+::: {#exm-ponto-hiperbolico-2}
+Seja $f(x) = -\frac{1}{2}(x^3 + x)$. Nesse caso, $0$ é um ponto fixo hiperbólico, com $f'(0) = -\frac{1}{2}$, enquanto os pontos $\pm 1$ agora pertencem a uma órbita periódica de período $2$. Pela regra da cadeia, calculamos a derivada da segunda iterada nesses pontos:
+
+$$
+(f^2)'(\pm 1) = f'(1) \cdot f'(-1) = 4.
+$$
+
+Logo, esse ponto periódico também é hiperbólico. O retrato de fase correspondente é ilustrado na @fig-4-2, onde se observa que os pontos no intervalo $(-1, 1)$ espiralam em direção a $0$ e se afastam de $\pm 1$.
+:::
+
+Observamos que, nos dois exemplos anteriores, temos $|f'(0)| < 1$ e os pontos próximos a $0$ são assintóticos para a frente (*forward asymptotic*) a $0$. Essa situação ocorre com frequência:
+
+No retrato de fase interativo abaixo, mova o controle deslizante para escolher a condição inicial $x_0$ e observar até dez iterações da órbita.
+
+No retrato de fase interativo abaixo, mova o controle deslizante para escolher a condição inicial $x_0$ e observar até dez iterações da órbita.
+
+```{ojs}
+//| echo: false
+
+// Controle deslizante para escolher a condição inicial x0
+viewof x0 = Inputs.range([-1.4, 1.4], {value: 0.75, step: 0.01, label: "Condição inicial (x₀):"})
+
+// Função do sistema dinâmico f(x) = 0.5 * (x^3 + x)
+f = x => 0.5 * (Math.pow(x, 3) + x)
+
+// Cálculo da órbita (10 iterações)
+orbita = {
+  let pts = [x0];
+  let curr = x0;
+  for (let i = 0; i < 10; i++) {
+    curr = f(curr);
+    if (Math.abs(curr) > 2.2) break; // Evita explosão numérica na visualização
+    pts.push(curr);
+  }
+  return pts;
+}
+
+// Construção dos arcos para o retrato de fase
+arcos = {
+  let links = [];
+  for (let i = 0; i < orbita.length - 1; i++) {
+    links.push({x1: orbita[i], x2: orbita[i + 1], step: i});
+  }
+  return links;
+}
+
+// Renderização do retrato de fase com Observable Plot
+Plot.plot({
+  width: 700,
+  height: 180,
+  x: {domain: [-1.8, 1.8], label: "Espaço de Fase (ℝ)"},
+  y: {domain: [-0.2, 1], axis: null},
+  marks: [
+    // Eixo real horizontal
+    Plot.ruleY([0], {stroke: "#333", strokeWidth: 1.5}),
+
+    // Pontos fixos (-1, 0, 1)
+    Plot.dot([-1, 1], {x: d => d, y: 0, r: 6, fill: "white", stroke: "#d9534f", strokeWidth: 2.5}),
+    Plot.dot([0], {x: d => d, y: 0, r: 6, fill: "#28a745", stroke: "#28a745"}),
+
+    // Rótulos dos pontos fixos
+    Plot.text([-1, 0, 1], {
+      x: d => d,
+      y: -0.12,
+      text: d => d === 0 ? "0 (Atrator)" : `${d} (Repulsor)`,
+      fontSize: 12
+    }),
+
+    // Setas curvas (saltos x_n -> x_{n+1})
+    Plot.arrow(arcos, {
+      x1: "x1", y1: 0,
+      x2: "x2", y2: 0,
+      bend: true,
+      stroke: "#007bff",
+      strokeWidth: 1.5,
+      headLength: 6
+    }),
+
+    // Pontos da órbita
+    Plot.dot(orbita, {x: d => d, y: 0, r: 3.5, fill: "#007bff"})
+  ]
+})
+```

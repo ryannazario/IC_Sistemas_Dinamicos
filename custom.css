@@ -4,4 +4,81 @@
   margin-bottom: 0.5em;
 }
 
+/* Painel do retrato de fase: estilos limitados a este explorador. */
+.phase-explorer {
+  margin: 2rem 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid #dce5ef;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 35px #183b560b;
+  color: #334155;
+}
+.phase-explorer > p:first-child {
+  margin-bottom: .5rem;
+  font-size: 1.45rem;
+  color: #0f172a;
+}
+.phase-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 6rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.25rem;
+  background: #f1f5f9;
+  border-radius: 12px;
+}
+.phase-widget label { font-size: .85rem; font-weight: 600; }
+.phase-slider { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; }
+.phase-slider input { width: 100%; accent-color: #2563eb; cursor: pointer; }
+.phase-slider output, .phase-slider > span { color: #2563eb; font-variant-numeric: tabular-nums; }
+.phase-number { display: flex; flex-direction: column; gap: .4rem; }
+.phase-widget input[type="number"], .phase-widget select {
+  min-width: 0;
+  padding: .35rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: white;
+  color: #334155;
+}
+.phase-presets, .phase-actions, .phase-legend { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.phase-presets { margin: 1rem 0 .2rem; font-size: .8rem; }
+.phase-presets > span { margin-right: .4rem; color: #64748b; }
+.phase-widget button {
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: .45rem .8rem;
+  background: white;
+  color: #334155;
+  font: inherit;
+  font-size: .85rem;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.phase-widget button:hover { background: #eff6ff; border-color: #2563eb; }
+.phase-widget button:disabled { opacity: .45; cursor: default; }
+.phase-widget :is(button, input, select):focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+.phase-widget [data-x][aria-pressed="true"] { background: #ede9fe; border-color: #8b5cf6; color: #6d28d9; }
+.phase-widget .phase-play { background: #2563eb; border-color: #2563eb; color: white; min-width: 7rem; }
+.phase-widget .phase-play:hover { background: #1d4ed8; }
+.phase-canvas { margin: .5rem -1rem; }
+.phase-canvas svg { display: block; width: 100%; height: auto; min-height: 300px; cursor: crosshair; font-family: inherit; }
+.phase-canvas circle:focus { outline: none; stroke: #7c3aed; stroke-width: 4; }
+.phase-legend { justify-content: center; gap: .5rem 1.25rem; font-size: .75rem; margin-bottom: 1.5rem; }
+.phase-legend > span { display: inline-flex; align-items: center; gap: .4rem; }
+.phase-key { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.phase-key.attractor { background: #059669; }
+.phase-key.repeller { border: 2px solid #e05a47; }
+.phase-key.initial { border: 2px solid #7c3aed; }
+.phase-key.orbit { background: #2563eb; }
+.phase-actions > label { margin-left: auto; display: flex; align-items: center; gap: .5rem; }
+.phase-summary { margin-top: 1rem; padding: 1rem; border-left: 3px solid #2563eb; background: #eff6ff; border-radius: 0 8px 8px 0; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.phase-widget .phase-hint { margin: .8rem 0 0; color: #64748b; font-size: .75rem; }
+@media (max-width: 600px) {
+  .phase-controls { grid-template-columns: minmax(0, 1fr) 5rem; }
+  .phase-controls > :last-child { grid-column: 1 / -1; }
+  .phase-canvas { overflow-x: auto; }
+  .phase-canvas svg { min-width: 650px; }
+  .phase-actions > label { width: 100%; margin: .5rem 0 0; }
+}
+
 

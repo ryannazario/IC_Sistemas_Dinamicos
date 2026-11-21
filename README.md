@@ -1,5 +1,6 @@
 <div align="center">
 
+[![Animated Lorenz system attractor](images/animated-lorenz-attractor.gif)]
 # Sistemas Dinâmicos Discretos
 
 ### Iniciação Científica | IME-USP
