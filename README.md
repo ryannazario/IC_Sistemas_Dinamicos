@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Animated Lorenz system attractor](images/animated-lorenz-attractor.gif)]
+<img src="images/animated-lorenz-attractor.gif" alt="Atrator de Lorenz" width="500">
 # Sistemas Dinâmicos Discretos
 
 ### Iniciação Científica | IME-USP
