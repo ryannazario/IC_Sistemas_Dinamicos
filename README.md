@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="images/animated-lorenz-attractor.gif" alt="Atrator de Lorenz" width="500">
+<img src="images/animated-lorenz-attractor.gif" alt="Atrator de Lorenz" width="400">
 
 # Sistemas Dinâmicos Discretos
 
